@@ -20,6 +20,8 @@ services:
       - DB_USER=${POSTGRES_USER:-postgres}
       - DB_PASSWORD=${POSTGRES_PASSWORD:-postgres}
     depends_on:
+      pgadmin:
+        condition: service_started
       postgres:
         condition: service_healthy
 
